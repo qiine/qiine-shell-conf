@@ -1,0 +1,164 @@
+
+# blerc
+
+
+# see all opt with: blepot
+
+# [Auto menu]
+bleopt complete_auto_menu=1
+bleopt complete_menu_complete=1
+bleopt complete_menu_filter=1
+
+bleopt complete_limit=500
+bleopt complete_limit_auto=7
+bleopt complete_limit_auto_menu=7
+bleopt complete_menu_maxlines=7
+
+bleopt complete_menu_style=desc
+# bleopt complete_skip_matched=off
+
+
+bleopt info_display=top
+
+#Set immediate menu display
+#bleopt complete_menu_delay=0
+
+
+## [Colors]
+#----------------------------------------------------------------------
+bleopt highlight_syntax=
+
+# bleopt complete_menu_complete=
+# bleopt complete_auto_menu=
+
+bleopt complete_menu_color=off
+bleopt complete_menu_color_match=off
+
+# custom styles
+##################################################################
+ble-face auto_complete=fg=blue,bg=none  # ghost text
+
+# ble-face argument_option=fg=black,bg=none  # menu ?
+ble-face argument_error=fg=black,bg=none
+
+ble-face disabled=fg=242,bg=none
+
+# ble-face cmdinfo_cd_cdpath=fg=26,bg=none
+# ble-face command_alias=fg=teal,bg=none
+# ble-face command_builtin=fg=red,bg=none
+# ble-face command_builtin_dot=fg=red,bold,bg=none
+# ble-face command_directory=fg=63,underline,bg=none
+# ble-face command_file=fg=green,bg=none
+# ble-face command_function=fg=133,bg=none
+# ble-face command_jobs=fg=red,bold,bg=none
+# ble-face command_keyword=fg=blue,bg=none
+ble-face command_suffix=fg=231,bg=none
+ble-face command_suffix_new=fg=231,bg=none
+
+# menu
+# ble-face menu_complete_match=fg=238,bg=none
+# ble-face menu_complete_selected=fg=238
+# ble-face menu_desc_default=none
+# ble-face menu_desc_quote=ref:syntax_quoted
+# ble-face menu_desc_type=ref:syntax_delimiter
+# ble-face menu_filter_fixed=bold
+# ble-face menu_filter_input=fg=256,bg=none
+#
+# ble-face overwrite_mode=fg=black,bg=51
+
+# ble-face prompt_status_line=fg=231,bg=240
+
+# ble-face region=fg=231,bg=60
+# ble-face region_insert=fg=27,bg=254
+# ble-face region_match=fg=231,bg=55
+# ble-face region_target=fg=black,bg=153
+
+# Syntax
+# ble-face syntax_brace=fg=37,bold
+# ble-face syntax_command=fg=brown
+# ble-face syntax_comment=fg=gray
+ble-face syntax_default=fg=200,bg=none
+# ble-face syntax_delimiter=fg=200
+# ble-face syntax_document=fg=100
+# ble-face syntax_document_begin=fg=100,bold
+ble-face syntax_error=fg=231,bg=none
+# ble-face syntax_escape=fg=magenta
+# ble-face syntax_expr=fg=63
+# ble-face syntax_function_name=fg=99,bold
+# ble-face syntax_glob=fg=198,bold
+# ble-face syntax_history_expansion=fg=231
+# ble-face syntax_param_expansion=fg=133
+# ble-face syntax_quotation=fg=green,bold
+# ble-face syntax_quoted=fg=green
+# ble-face syntax_tilde=fg=63,bold
+# ble-face syntax_varname=fg=orange
+
+## files
+# ble-face filename_block=fg=yellow,underline
+# ble-face filename_character=fg=231,underline
+# ble-face filename_directory=fg=33,underline
+# ble-face filename_directory_sticky=fg=231,underline
+# ble-face filename_executable=fg=green,underline
+# ble-face filename_link=fg=teal,underline
+# ble-face filename_ls_colors=underline
+# ble-face filename_orphan=fg=16,underline
+# ble-face filename_other=underline
+# ble-face filename_pipe=fg=lime,underline
+# ble-face filename_setgid=fg=black,underline
+# ble-face filename_setuid=fg=black,underline
+# ble-face filename_socket=fg=cyan,underline
+# ble-face filename_url=fg=blue,underline
+# ble-face filename_warning=fg=red,underline
+
+# ## var
+# ble-face varname_array=fg=orange,bold
+# ble-face varname_empty=fg=31
+# ble-face varname_export=fg=200,bold
+# ble-face varname_expr=fg=99,bold
+# ble-face varname_hash=fg=70,bold
+# ble-face varname_new=fg=34
+# ble-face varname_number=fg=64
+# ble-face varname_readonly=fg=200
+# ble-face varname_transform=fg=29,bold
+# ble-face varname_unset=fg=245
+#
+# # bell
+# ble-face vbell=reverse
+# ble-face vbell_erase=bg=252
+# ble-face vbell_flash=fg=green,reverse
+
+
+
+#EOL
+# Enable start time display
+#bleopt prompt_eol_mark='[START %H:%M:%S] '
+
+
+## [Keybind]
+#----------------------------------------------------------------------
+# see all:  ble-bind -P
+
+# bind '"\C-?":kill-backward-cword'
+# bind '"\C-H":kill-backward-cword'
+# bind '"^H":kill-backward-cword'
+# bind '"^[^?":kill-backward-cword'
+
+
+ble-bind -f 'M-C-?' kill-backward-cword
+# ble-bind -k 'ESC DEL' kill-backward-cword
+
+ble-bind -m 'emacs' -f C-BS kill-backward-cword
+ble-bind -m 'emacs' -f M-S-DEL kill-backward-cword
+ble-bind -m 'emacs' -f M-S-BS kill-backward-cword
+ble-bind -m 'emacs' -f C-H kill-backward-cword
+
+# complete'
+ble-bind -m 'emacs' -f C-@ menu-complete  # c-space open menu
+# ble-bind -m 'emacs' -f RET accept-single-line-or-newline
+
+ble-bind -m 'auto_complete' -f TAB auto_complete/insert  # only insert ghost text
+# ble-bind -m 'auto_complete' -f TAB 'auto_complete/@end insert-cword'
+
+
+
+

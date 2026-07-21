@@ -1,0 +1,55 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+|$username$hostname$directory$shell
+"""
+
+right_format = """
+|$time|
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[directory]
+disabled = false
+style = 'bg:none'
+format = "[ $path]($style)"
+
+truncation_length = 4
+use_logical_path = false
+truncation_symbol = "…" # /
+truncate_to_repo = true
+fish_style_pwd_dir_length = 1
+use_os_path_sep	= true
+
+[hostname]
+disabled = false
+style = 'bg:none fg:#DA627D'
+format = "[$hostname]($style)"
+ssh_only = false
+
+[username]
+disabled = false
+show_always = true
+style_user = "bg:none"
+style_root = "bg:none"
+format = '[$user@]($style)' # 
+
+[shell]
+disabled = false
+fish_indicator = ' £>'
+bash_indicator = ' \$>'  # ❯ ➤ ›
+zsh_indicator = ' z>'
+unknown_indicator = '?'
+# style = 'cyan bold'
+style = 'bg:none fg:cyan bold'
+
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:NONE"
+format = '[$time]($style)'
+
+

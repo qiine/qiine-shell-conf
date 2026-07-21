@@ -1,0 +1,16 @@
+: 1783106038:0;ls
+: 1783106043:0;cat history
+: 1783106724:0;ls
+: 1783106726:0;cd
+: 1783106729:0;cd Personal
+: 1783106751:0;cd dotfiles
+: 1783106794:0;cd User/
+: 1783107885:0;ls
+: 1783107888:0;..
+: 1783107962:0;ls
+: 1783107964:0;..
+: 1783353310:0;ffprobe -show_streams video.mp4 Battlefleet_Gothic_-_Armada_2_Review\[2XbaDEO8IHs\].mkv
+: 1783353549:0;exiftool Battlefleet_Gothic_-_Armada_2_Review\[2XbaDEO8IHs\].mkv
+: 1783353789:0;exiftool -b -attachedfile > cover.webp "Battlefleet_Gothic_-_Armada_2_Review[2XbaDEO8IHs].mkv"
+: 1783354542:0;vcut webp2jpg cover.webp
+: 1783354546:0;bash
