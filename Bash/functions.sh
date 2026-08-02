@@ -199,6 +199,13 @@ jsonl2csv() {
     mlr --ijsonl --ocsv cat "${in}" > "${name}.csv"
 }
 
+kvirtmonnew() {
+    read -rs -p "VNC password: " _vnc_pass
+    krfb-virtualmonitor --resolution 2480x1860 --name virtmon --password "$_vnc_pass" --port 5900
+    unset _vnc_pass
+}
+
+
 ## Media
 #----------------------------------------------------------------------
 ### PDF
@@ -248,10 +255,16 @@ pdfunlock() {
     echo "Unlocked: $out"
 }
 
+## [Dev]
+mk() {
+    if [[ -f Makefile ]]; then
+        make "$@"
+    else
+        make -C "$(git rev-parse --show-toplevel)" "$@"
+    fi
+}
 
-
-## VC
-#----------------------------------------------------------------------
+### VC
 
 
 ## org
@@ -310,6 +323,10 @@ nixchkopt() {
 
 nixwhere() {
     nix eval nixpkgs#"${1}".outPath
+}
+
+nixf() {
+    nix path-info -r /run/current-system | grep -i "${1}"
 }
 
 
